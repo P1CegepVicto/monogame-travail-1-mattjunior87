@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Game1
 {
@@ -129,6 +130,7 @@ namespace Game1
             Updatedeadpool();
 
             base.Update(gameTime);
+            
         }
 
         /// <summary>
@@ -141,7 +143,7 @@ namespace Game1
             spriteBatch.Begin();
 
             spriteBatch.Draw(Background.sprite, fenetre, Color.White);
-            
+            spriteBatch.Draw(deadpool.sprite, deadpool.position, Color.White);
             spriteBatch.Draw(PinkPoney.sprite, PinkPoney.position, Color.White);
 
             spriteBatch.End();
