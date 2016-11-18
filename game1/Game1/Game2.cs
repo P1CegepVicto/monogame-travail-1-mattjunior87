@@ -60,8 +60,8 @@ namespace Game1
 
             deadpool = new GameObject();
             deadpool.estVivant = true;
-            deadpool.position.X = 0;
-            deadpool.position.Y = 0;
+            deadpool.position.X = 5;
+            deadpool.position.Y = 3;
             deadpool.sprite = Content.Load<Texture2D>("deadpool.png");
 
 
@@ -94,23 +94,39 @@ namespace Game1
             // TODO: Add your update logic here
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                deadpool.position.X += deadpool.vitesse;
+                deadpool.position.X += 7;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                deadpool.position.X -= deadpool.vitesse;
+                deadpool.position.X -= 7;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.w))
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                deadpool.position.Y += deadpool.vitesse;
+                deadpool.position.Y += 7;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                deadpool.position.Y -= deadpool.vitesse;
+                deadpool.position.Y -= 7;
             }
 
+            if (deadpool.position.X < fenetre.Left)
+            {
+                deadpool.position.X = fenetre.Left;
+            }
+            if (deadpool.position.X > fenetre.Right - 87)
+            {
+                deadpool.position.X = fenetre.Right - 87;
+            }
+            if (deadpool.position.Y < fenetre.Top)
+            {
+                deadpool.position.Y = fenetre.Top;
+            }
+            if (deadpool.position.Y > fenetre.Bottom - 200)
+            {
+                deadpool.position.Y = fenetre.Bottom - 200;
+            }
 
-
+            Updatedeadpool();
 
             base.Update(gameTime);
         }
@@ -125,7 +141,7 @@ namespace Game1
             spriteBatch.Begin();
 
             spriteBatch.Draw(Background.sprite, fenetre, Color.White);
-            spriteBatch.Draw(deadpool.sprite, deadpool.position, Color.White);
+            
             spriteBatch.Draw(PinkPoney.sprite, PinkPoney.position, Color.White);
 
             spriteBatch.End();
