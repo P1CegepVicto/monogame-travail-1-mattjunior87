@@ -26,3 +26,6 @@ C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\obj\
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\deadpool.png
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\IMG_209847.png
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\PinkPoney.png
+C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\Caca.png
+C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\explosion.png
+C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Game1\bin\Windows\x86\Debug\Content\fin.jpg
