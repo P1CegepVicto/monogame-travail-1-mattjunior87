@@ -141,7 +141,7 @@ namespace Game1
 
 
 
-            //Updatedeadpool();
+           
             Updatedeapool();
             UpdatePinkPoney();
             Updatecaca();

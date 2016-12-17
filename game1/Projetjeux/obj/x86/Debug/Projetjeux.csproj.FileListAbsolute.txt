@@ -23,7 +23,7 @@ C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\obj\x86\Debug\Projetjeux.exe
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\obj\x86\Debug\Projetjeux.pdb
-C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\Content\8_bit_flash_by_8bitherodotorg-d7lqm8b.png
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\Content\IMG_209847.png
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\Content\hs.png
 C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\Content\PinkPoney.png
+C:\Users\mattj\Documents\GitHub\monogame-travail-1-mattjunior87\game1\Projetjeux\bin\Windows\x86\Debug\Content\flash.png

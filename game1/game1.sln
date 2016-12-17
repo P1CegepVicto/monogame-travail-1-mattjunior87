@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projetjeux", "Projetjeux\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game1", "Game1\Game1.csproj", "{EFA7C38D-32BB-4A42-AE46-07C45D0B7455}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamenumero2", "Gamenumero2\Gamenumero2.csproj", "{3997BB10-D843-48D8-B2CC-EAC5296BAB69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeuxfinal", "Jeuxfinal\Jeuxfinal.csproj", "{016878E8-A688-40B4-ADA2-9622E5F93F46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +25,14 @@ Global
 		{EFA7C38D-32BB-4A42-AE46-07C45D0B7455}.Debug|x86.Build.0 = Debug|x86
 		{EFA7C38D-32BB-4A42-AE46-07C45D0B7455}.Release|x86.ActiveCfg = Release|x86
 		{EFA7C38D-32BB-4A42-AE46-07C45D0B7455}.Release|x86.Build.0 = Release|x86
+		{3997BB10-D843-48D8-B2CC-EAC5296BAB69}.Debug|x86.ActiveCfg = Debug|x86
+		{3997BB10-D843-48D8-B2CC-EAC5296BAB69}.Debug|x86.Build.0 = Debug|x86
+		{3997BB10-D843-48D8-B2CC-EAC5296BAB69}.Release|x86.ActiveCfg = Release|x86
+		{3997BB10-D843-48D8-B2CC-EAC5296BAB69}.Release|x86.Build.0 = Release|x86
+		{016878E8-A688-40B4-ADA2-9622E5F93F46}.Debug|x86.ActiveCfg = Debug|x86
+		{016878E8-A688-40B4-ADA2-9622E5F93F46}.Debug|x86.Build.0 = Debug|x86
+		{016878E8-A688-40B4-ADA2-9622E5F93F46}.Release|x86.ActiveCfg = Release|x86
+		{016878E8-A688-40B4-ADA2-9622E5F93F46}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,6 @@ namespace Projetjeux
     class GameObject
     {
         public Vector2 position;
-        public int vitesse;
         public Texture2D sprite;
         public bool estVivant;
     }

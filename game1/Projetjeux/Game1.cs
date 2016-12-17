@@ -12,7 +12,6 @@ namespace Projetjeux
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Rectangle fenetre;
-        GameObject heros;
         GameObject PinkPoney;
         GameObject Flash;
         GameObject Background;
