@@ -13,3 +13,27 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Sounds/Puzzle-Game_Looping.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/Puzzle-Game_Looping.mp3
+
+#begin Sounds/AIRPORN.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/AIRPORN.mp3
+
+#begin Sounds/2SED4AIRHORN.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/2SED4AIRHORN.mp3
+
+#begin Sounds/2SAD4ME (1).mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/2SAD4ME (1).mp3
+

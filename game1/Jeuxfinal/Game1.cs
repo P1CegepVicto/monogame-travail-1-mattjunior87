@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 using System;
 
 namespace Jeuxfinal
@@ -18,13 +20,19 @@ namespace Jeuxfinal
         GameObject[] projectiles = new GameObject[10];
         GameObject background1;
         GameObject background2;
+        GameObject backgroundwin;
+        GameObject backgroundloose;
         Random de = new Random();
+        SoundEffect son;
+        SoundEffectInstance airhorn;
 
-        
+
+
         int typeconsole = 0;
         int typeprojectiles = 0;
-        int nbprojectiles = 0;
-        int i = 10;
+        int nbprojectiles = 10;
+        int projectilevivant = 0;
+        int compteur = 0;
         
 
 
@@ -60,6 +68,7 @@ namespace Jeuxfinal
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+           
 
             hero = new GameObject();
             hero.estVivant = true;
@@ -80,9 +89,22 @@ namespace Jeuxfinal
             background2.position.Y = 0;
             background2.sprite = Content.Load<Texture2D>("background.jpg");
 
+            backgroundwin = new GameObject();
+            backgroundwin.estVivant = true;
+            backgroundwin.position.X = 0;
+            backgroundwin.position.Y = 0;
+            backgroundwin.sprite = Content.Load<Texture2D>("win.jpg");
+
+            backgroundloose = new GameObject();
+            backgroundloose.estVivant = true;
+            backgroundloose.position.X = 0;
+            backgroundloose.position.Y = 0;
+            backgroundloose.sprite = Content.Load<Texture2D>("loose.jpg");
+
             for (int i = 0; i < console.Length; i++)
             {
                 console[i] = new GameObject();
+                console[i].estVivant = true;
                 console[i].position.X = 0;
                 console[i].position.Y = de.Next(2,400);
                 console[i].direction.X = de.Next(8,15);
@@ -125,7 +147,11 @@ namespace Jeuxfinal
                 }
 
             }
+            Song song = Content.Load<Song>("Sounds\\Puzzle-Game_Looping");
+            MediaPlayer.Play(song);
 
+            son = Content.Load<SoundEffect>("Sounds\\AIRPORN");
+            airhorn = son.CreateInstance();
 
             // TODO: use this.Content to load your game content here
         }
@@ -181,10 +207,12 @@ namespace Jeuxfinal
             {
                 hero.position.Y = fenetre.Bottom - 400;
             }
-            // TODO: Add your update logic here
+            
+                // TODO: Add your update logic here
             updateconsole();
             background();
             updateprojectiles(gameTime);
+             
             base.Update(gameTime);
         }
         public void updateconsole()
@@ -199,29 +227,52 @@ namespace Jeuxfinal
                 {
                     console[i].direction.X = de.Next(8, 15);
                 }
-               
+                if (console[i].GetRect().Intersects(hero.GetRect()))
+                {
+                    hero.estVivant = false;
+                }
+                for (int y = 0; y < projectiles.Length; y++)
+                {
+                    if (console[i].estVivant == true)
+                    {
+                        if (projectiles[y].estVivant == true)
+                        {
+                            if (console[i].GetRect().Intersects(projectiles[y].GetRect()))
+                            {
+                                console[i].estVivant = false;
+                                projectiles[y].estVivant = false;
+                            }
+                        }
+                    }
+                   
+                }
+
+
                 console[i].position.X += (int)console[i].direction.X;
                 
             }
         }
         public void updateprojectiles(GameTime gameTime)
         {
-            nbprojectiles++;
+            compteur++;
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                if (i < projectiles.Length)
+                if (projectilevivant < projectiles.Length)
                 {
-                    if (nbprojectiles < 0)
+                    if (compteur >= 15)
                     {
-                        projectiles[i].estVivant = true;
-                        projectiles[i].vitesse.Y = -25;
-                        if (projectiles[i].position.Y < fenetre.Top)
+                        projectiles[projectilevivant].estVivant = true;
+                        projectiles[projectilevivant].vitesse.Y = -25;
+                        airhorn.Play();
+                        if (projectiles[projectilevivant].position.Y < fenetre.Top)
                         {
-                            projectiles[i].estVivant = false;
+                            projectiles[projectilevivant].estVivant = false;
                             
                         }
-                        i++;
+                        projectilevivant++;
                         nbprojectiles--;
+                        compteur = 0;
+                        
                     }
                 }
 
@@ -263,11 +314,16 @@ namespace Jeuxfinal
             
             spriteBatch.Draw(background1.sprite, background1.position);
             spriteBatch.Draw(background2.sprite, background2.position, effects: SpriteEffects.FlipHorizontally);
-            spriteBatch.Draw(hero.sprite, hero.position, Color.White);
-
+            if (hero.estVivant == true)
+            {
+                spriteBatch.Draw(hero.sprite, hero.position, Color.White);
+            }
             for (int i = 0; i < console.Length; i++)
             {
-                spriteBatch.Draw(console[i].sprite, console[i].position, Color.White);
+                if (console[i].estVivant == true)
+                {
+                    spriteBatch.Draw(console[i].sprite, console[i].position, Color.White);
+                }
             }
 
          
@@ -275,11 +331,38 @@ namespace Jeuxfinal
             {
                 if (projectiles[i].estVivant == true)
                 {
-                    spriteBatch.Draw(projectiles[i].sprite, projectiles[i].position, Color.White);
+                    spriteBatch.Draw(projectiles[i].sprite, projectiles[i].position += projectiles[i].vitesse, Color.White);
                 }
             }
-                 
-            
+            if (console[0].estVivant == false)
+            {
+                if (console[1].estVivant == false)
+                {
+                    if (console[2].estVivant == false)
+                    {
+                        if (console[3].estVivant == false)
+                        {
+                            if (console[4].estVivant == false)
+                            {
+                                if (console[5].estVivant == false)
+                                {
+                                    if (console[6].estVivant == false)
+                                    {
+                                        if (console[7].estVivant == false)
+                                        {
+                                            spriteBatch.Draw(backgroundwin.sprite, backgroundwin.position);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+            if (hero.estVivant == false)
+            {
+                spriteBatch.Draw(backgroundloose.sprite, backgroundloose.position);
+            }
           
             spriteBatch.End();
             base.Draw(gameTime);
